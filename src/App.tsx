@@ -49,7 +49,7 @@ function App() {
                 <div>
                     <span className='font-medium text-xl'>Найти</span>
                     <form onSubmit={handleSearch} className='flex flex-col'>
-                        <input type='file' onChange={(e) => {
+                        <input type='file' accept='.jpg,.jpeg,.png' onChange={(e) => {
                             if (e.target.files)
                                 setSearchFile(e.target.files[0])
                         }}/>
