@@ -18,7 +18,7 @@ type SearchResponse = {
 export function upload(file: File) {
     const form = new FormData();
     form.append('file', file)
-    return api.post<UploadResponse>('api/upload', {
+    return api.post<UploadResponse>('upload', {
         body: form,
     }).json()
 }
@@ -26,7 +26,7 @@ export function upload(file: File) {
 export function search(file: File) {
     const form = new FormData();
     form.append('image', file)
-    return api.post<SearchResponse>('api/search', {
+    return api.post<SearchResponse>('search', {
         body: form,
     }).json()
 }
@@ -35,7 +35,7 @@ export function index(file: File, objectKey: string) {
     const form = new FormData();
     form.append('image', file)
     form.append('objectKey', objectKey)
-    return api.post('api/index', {
+    return api.post('index', {
         body: form,
     }).text()
 }
